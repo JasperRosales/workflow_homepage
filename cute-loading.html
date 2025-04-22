@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Loading...</title>
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #ffffff;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .loading-overlay {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      width: 100%;
+    }
+
+    .loading-overlay img {
+      width: 300px;
+      height: auto;
+      animation: bobbing 2s infinite ease-in-out;
+    }
+
+    @keyframes bobbing {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+  </style>
+
+  <script>
+    setTimeout(() => {
+      window.location.href = "/login-page.html";
+    },4000);
+  </script>
+</head>
+<body>
+
+  <div class="loading-overlay">
+    <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExeHVvbWZxdWdweXkyeHM3dXhudXMwYXQ5aXRpbmFlajM5dXl3aDhlayZlcD12MV9naWZzX3NlYXJjaCZjdD1n/xT4uQfcg9DXM2xNMyY/giphy.webp" alt="Loading..." />
+  </div>
+
+</body>
+</html>

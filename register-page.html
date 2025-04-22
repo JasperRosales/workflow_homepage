@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Workflow - Register</title>
+
+  <!-- Bootstrap & Animate.css -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+
+  <!-- Custom Styles -->
+  <style>
+    body {
+      background-color: #f8f9fa;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
+    }
+
+    .register-wrapper {
+      width: 100%;
+      max-width: 400px;
+    }
+
+    .workflow-text {
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    .card {
+      border: none;
+      border-radius: 1rem;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease-in-out;
+    }
+
+    /* Apply reverse tilt from upper left to lower right when card is hovered */
+    .card:hover {
+        transform: perspective(1500px) rotateX(20deg) rotateY(20deg);
+    }
+
+    /* Input fields tilt effect on focus */
+    .form-control:focus {
+      transform: rotateX(1deg) rotateY(-1deg); /* Slight tilt on focus */
+    }
+
+    .form-links {
+      font-size: 0.9rem;
+    }
+
+    .form-links a {
+      text-decoration: none;
+      color: #0d6efd;
+    }
+
+    .form-links a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 575.98px) {
+      h1 {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="register-wrapper animate__animated animate__fadeInUp">
+    
+    <!-- Workflow Text Above Card -->
+    <div class="workflow-text">
+      <a href="index.html" class="text-decoration-none">
+        <h1 class="fw-bold text-primary">Workflow</h1>
+      </a>
+    </div>
+
+    <!-- Register Card -->
+    <div class="card p-4">
+      <div class="card-header bg-white border-0 text-center">
+        <h5 class="mb-0"><i class="bi bi-person-plus me-2"></i>Register</h5>
+      </div>
+      <div class="card-body">
+        <form class="needs-validation" novalidate>
+          <!-- Username -->
+          <div class="mb-3">
+            <label for="validationUsername" class="form-label">Username</label>
+            <div class="input-group has-validation">
+              <span class="input-group-text"><i class="bi bi-person"></i></span>
+              <input type="text" class="form-control" id="validationUsername" placeholder="Enter username" required>
+              <div class="invalid-feedback">
+                Please enter your username.
+              </div>
+            </div>
+          </div>
+
+          <!-- Email -->
+          <div class="mb-3">
+            <label for="validationEmail" class="form-label">Email</label>
+            <div class="input-group has-validation">
+              <span class="input-group-text"><i class="bi bi-envelope"></i></span>
+              <input type="email" class="form-control" id="validationEmail" placeholder="Enter email" required>
+              <div class="invalid-feedback">
+                Please enter a valid email.
+              </div>
+            </div>
+          </div>
+
+          <!-- Password -->
+          <div class="mb-3">
+            <label for="validationPassword" class="form-label">Password</label>
+            <div class="input-group has-validation">
+              <span class="input-group-text"><i class="bi bi-lock"></i></span>
+              <input type="password" class="form-control" id="validationPassword" placeholder="Enter password" required minlength="6">
+              <div class="invalid-feedback">
+                Please enter a password with at least 6 characters.
+              </div>
+            </div>
+          </div>
+
+          <!-- Confirm Password -->
+          <div class="mb-3">
+            <label for="validationConfirmPassword" class="form-label">Confirm Password</label>
+            <div class="input-group has-validation">
+              <span class="input-group-text"><i class="bi bi-lock"></i></span>
+              <input type="password" class="form-control" id="validationConfirmPassword" placeholder="Confirm password" required minlength="6">
+              <div class="invalid-feedback">
+                Please confirm your password.
+              </div>
+            </div>
+          </div>
+
+          <!-- Submit -->
+          <div class="d-grid mb-3">
+            <button class="btn btn-primary" type="submit">Register</button>
+          </div>
+
+          <!-- Links -->
+          <div class="text-center form-links">
+            <span>Already registered? </span><a href="/login-page.html">Login</a>
+          </div>
+        </form>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Form Validation -->
+  <script>
+    (() => {
+      'use strict';
+      const forms = document.querySelectorAll('.needs-validation');
+      Array.from(forms).forEach(form => {
+        form.addEventListener('submit', event => {
+          if (!form.checkValidity()) {
+            event.preventDefault();
+            event.stopPropagation();
+          }
+          form.classList.add('was-validated');
+        }, false);
+      });
+    })();
+  </script>
+</body>
+</html>
